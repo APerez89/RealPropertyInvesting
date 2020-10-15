@@ -1,10 +1,17 @@
 <template>
-  <div class="rpi-container"></div>
+  <div class="rpi-container">
+    <Nav />
+  </div>
 </template>
 
 <script>
+import Nav from './RPINav'
+
 export default {
   name: 'RpiContainer',
+  components: {
+    Nav
+  },
   props: {
     msg: String
   }
