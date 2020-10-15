@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import RpiContainer from './components/RPIContain.vue'
+import RpiContainer from './components/RPIContainer.vue'
 
 export default {
   name: 'App',
