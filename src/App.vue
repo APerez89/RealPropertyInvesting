@@ -2,6 +2,7 @@
   <div id="app">
     <RpiContainer />
     <font-awesome-icon :icon="['fab', 'facebook-f']" />
+    <font-awesome-icon :icon="['fab', 'instagram']" />
   </div>
 </template>
 
