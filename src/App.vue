@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <RpiContainer />
+    <font-awesome-icon :icon="['fab', 'facebook-f']" />
   </div>
 </template>
 
