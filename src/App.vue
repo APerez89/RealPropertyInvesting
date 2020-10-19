@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav />
     <RpiContainer />
     <font-awesome-icon :icon="['fab', 'facebook-f']" />
     <font-awesome-icon :icon="['fab', 'instagram']" />
@@ -8,11 +9,13 @@
 
 <script>
 import RpiContainer from './components/RPIContainer.vue'
+import Nav from './components/RPINav.vue'
 
 export default {
   name: 'App',
   components: {
-    RpiContainer
+    RpiContainer,
+    Nav
   }
 }
 </script>
@@ -34,5 +37,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
 }
 </style>

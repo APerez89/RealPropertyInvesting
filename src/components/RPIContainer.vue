@@ -1,22 +1,38 @@
 <template>
   <div class="rpi-container">
-    <Nav />
 
     <div class="image-slider">
       <div class="dark-layer">
       </div>
       <!-- <img src="../assets/images/slide-1.jpg" alt=""> -->
     </div>
+    <Distressed />
+    <ShortSale />
+    <Investor />
+    <Realtor />
+    <Footer />
+    <Form />
   </div>
+
 </template>
 
 <script>
-import Nav from './RPINav'
+import Distressed from './RPIDistressed'
+import ShortSale from './RPIShortSale'
+import Investor from './RPIInvestor'
+import Realtor from './RPIRealtor'
+import Footer from './RPIFooter'
+import Form from './RPIForm'
 
 export default {
   name: 'RpiContainer',
   components: {
-    Nav
+    Distressed,
+    ShortSale,
+    Investor,
+    Realtor,
+    Footer,
+    Form
   },
   props: {
     msg: String
@@ -29,9 +45,9 @@ export default {
 .rpi-container {
   width: 100%;
   max-height: 100vh;
-  background-image: url('../assets/images/slide-1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url('../assets/images/slide-1.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
 
   .image-slider {
     position: absolute;

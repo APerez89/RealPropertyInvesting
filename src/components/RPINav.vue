@@ -35,6 +35,7 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  background-color: var(--white);
 
   .logo-wrap {
     img {
@@ -50,17 +51,19 @@ export default {
     ul {
       display: flex;
       flex-direction: row;
+      align-items: center;
       list-style: none;
       padding: 0px;
 
       li {
+        height: 50px;
         padding: 10px 25px;
         font-size: 1.2rem;
         cursor: pointer;
-        transition: all 0.3s ease;
 
         &:hover {
           color: var(--l-blue);
+          border-bottom: 2px solid var(--l-blue);
         }
       }
     }
