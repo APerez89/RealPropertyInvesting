@@ -1,17 +1,17 @@
 <template>
     <div class="realtor-contain">
         <h2>About Us</h2>
-        <Realtor />
+        <RealtorInfo />
     </div>
 </template>
 
 <script>
-import Realtor from '../components/RPIRealtor'
+import RealtorInfo from '../components/RealtorInfo'
 
 export default {
     name: 'Realtor',
     components: {
-        Realtor
+        RealtorInfo
     }
 }
 </script>

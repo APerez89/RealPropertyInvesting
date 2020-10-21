@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'Realtor',
+    name: 'RealtorInfo',
 }
 </script>
 

@@ -1,17 +1,17 @@
 <template>
     <div class="short-sale-contain">
         <h2>About Us</h2>
-        <ShortSale />
+        <ShortSaleInfo />
     </div>
 </template>
 
 <script>
-import ShortSale from '../components/RPIShortSale'
+import ShortSaleInfo from '../components/ShortSaleInfo'
 
 export default {
     name: 'ShortSale',
     components: {
-        ShortSale
+        ShortSaleInfo
     }
 }
 </script>

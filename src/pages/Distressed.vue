@@ -1,17 +1,17 @@
 <template>
     <div class="distressed-contain">
         <h2>Distressed Properties</h2>
-        <Distressed />
+        <DistressedInfo />
     </div>
 </template>
 
 <script>
-import Distressed from '../components/RPIDistressed'
+import DistressedInfo from '../components/DistressedInfo'
 
 export default {
     name: 'Distressed',
     components: {
-        Distressed
+        DistressedInfo
     }
 }
 </script>

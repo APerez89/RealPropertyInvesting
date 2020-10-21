@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'ShortSale',
+    name: 'ShortSaleInfo',
 }
 </script>
 

@@ -12,8 +12,13 @@
           <li><router-link class="link" to="/">Home</router-link></li>
           <li><router-link class="link" to="/About">About</router-link></li>
           <li class="dropdown">
-            <span>
-              Services
+            <span class="drop-text">
+              Services 
+              <span class="down-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
             </span>
 
             <div class="drop-items">
@@ -51,6 +56,7 @@ export default {
     max-width: 1250px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
 
     .logo-wrap {
@@ -76,10 +82,26 @@ export default {
           padding: 10px 25px;
           font-size: 1.2rem;
           cursor: pointer;
+          transform: translateZ(0);
+          backface-visibility: hidden;
 
-          &:hover {
-            color: var(--l-blue);
-            border-bottom: 2px solid var(--l-blue);
+          &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            background: #2980b9;
+            height: 2px;
+            transition-property: right;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+
+          }
+
+          &:hover::before {
+            right: 0;
           }
         }
 
@@ -91,17 +113,38 @@ export default {
         .dropdown {
           position: relative;
 
+          .drop-text {
+            display: flex;
+            justify-content: center;
+
+            .down-arrow {
+              width: 25px;
+              margin-left: 5px;
+            }
+          }
+
           .drop-items {
             display: none;
           }
 
           &:hover {
             .drop-items {
+              width: max-content;
               display: flex;
               flex-direction: column;
               position: absolute;
               background-color: var(--white);
               padding: 10px 15px;
+              top: 105%;
+              left: 0;
+
+              .link {
+                padding: 10px 0px;
+
+                &:hover {
+                  color: var(--l-blue);
+                }
+              }
             }
           }
         }
@@ -109,7 +152,7 @@ export default {
 
       .contact-card {
         width: 35px;
-        margin: 10px 15px;
+        margin: 10px 0 10px 25px;
         cursor: pointer;
         transition: all 0.3s ease;
 

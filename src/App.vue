@@ -6,20 +6,22 @@
         <Home />
       </router-view>
     </transition>
-    <font-awesome-icon :icon="['fab', 'facebook-f']" />
-    <font-awesome-icon :icon="['fab', 'instagram']" />
+    <Footer />
+    
   </div>
 </template>
 
 <script>
-import Home from './pages/Home.vue'
-import Nav from './components/RPINav.vue'
+import Home from './pages/Home'
+import Nav from './components/RPINav'
+import Footer from './components/RPIFooter'
 
 export default {
   name: 'App',
   components: {
     Home,
-    Nav
+    Nav,
+    Footer
   }
 }
 </script>
@@ -42,5 +44,16 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
+  color: var(--d-gray);
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 28px;
 }
 </style>

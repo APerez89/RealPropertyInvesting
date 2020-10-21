@@ -1,17 +1,17 @@
 <template>
     <div class="investor-contain">
         <h2>Investor</h2>
-        <Investor />
+        <InvestorInfo />
     </div>
 </template>
 
 <script>
-import Investor from '../components/RPIInvestor'
+import InvestorInfo from '../components/InvestorInfo'
 
 export default {
-    name: 'Investor',
+    name: 'InvestorInfo',
     components: {
-        Investor
+        InvestorInfo
     }
 }
 </script>
