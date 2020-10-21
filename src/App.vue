@@ -1,20 +1,24 @@
 <template>
   <div id="app">
     <Nav />
-    <RpiHome />
+    <transition name="fade" mode="out-in">
+      <router-view>
+        <Home />
+      </router-view>
+    </transition>
     <font-awesome-icon :icon="['fab', 'facebook-f']" />
     <font-awesome-icon :icon="['fab', 'instagram']" />
   </div>
 </template>
 
 <script>
-import RpiHome from './pages/RPIHome.vue'
+import Home from './pages/Home.vue'
 import Nav from './components/RPINav.vue'
 
 export default {
   name: 'App',
   components: {
-    RpiHome,
+    Home,
     Nav
   }
 }

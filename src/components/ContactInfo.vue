@@ -1,10 +1,10 @@
 <template>
-    <div class="contact-wrap"></div>
+    <div class="contact-info-contain"></div>
 </template>
 
 <script>
 export default {
-    name: 'Contact',
+    name: 'contact-info'
 }
 </script>
 

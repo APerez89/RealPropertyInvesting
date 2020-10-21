@@ -2,28 +2,28 @@
   <div class="nav-contain">
     <div class="nav-wrap">
       <div class="logo-wrap">
-        <a href="#">
+        <router-link to="/">
           <img src="../assets/logo.png" alt="Real Property Investing Logo">
-        </a>
+        </router-link>
       </div>
 
       <div class="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
+          <li><router-link class="link" to="/">Home</router-link></li>
+          <li><router-link class="link" to="/About">About</router-link></li>
           <li class="dropdown">
             <span>
               Services
             </span>
 
             <div class="drop-items">
-              <a href="#">Distressed Property Expert</a>
-              <a href="#">Short Sale Negotiator</a>
-              <a href="#">Real Estate Investor</a>
-              <a href="#">Premier Realtor</a>
+              <router-link class="link" to="/Distressed">Distressed Property Expert</router-link>
+              <router-link class="link" to="/Short-Sale">Short Sale Negotiator</router-link>
+              <router-link class="link" to="/Investor">Real Estate Investor</router-link>
+              <router-link class="link" to="/Realtor">Premier Realtor</router-link>
             </div>
           </li>
-          <li>Contact Us</li>
+          <li><router-link class="link" to="/Contact">Contact Us</router-link></li>
         </ul>
         <div class="contact-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,6 +81,11 @@ export default {
             color: var(--l-blue);
             border-bottom: 2px solid var(--l-blue);
           }
+        }
+
+        .link {
+          text-decoration: none;
+          color: var(--d-blue);
         }
 
         .dropdown {

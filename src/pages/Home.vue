@@ -6,7 +6,7 @@
       <div class="image-slider">
         <div class="dark-layer">
         </div>
-        <!-- <img src="../assets/images/slide-1.jpg" alt=""> -->
+        <img src="../assets/images/slide-1.jpg" alt="">
       </div>
       <Distressed />
       <ShortSale />
