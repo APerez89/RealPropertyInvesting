@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <Nav />
-    <RpiContainer />
+    <RpiHome />
     <font-awesome-icon :icon="['fab', 'facebook-f']" />
     <font-awesome-icon :icon="['fab', 'instagram']" />
   </div>
 </template>
 
 <script>
-import RpiContainer from './components/RPIContainer.vue'
+import RpiHome from './pages/RPIHome.vue'
 import Nav from './components/RPINav.vue'
 
 export default {
   name: 'App',
   components: {
-    RpiContainer,
+    RpiHome,
     Nav
   }
 }
