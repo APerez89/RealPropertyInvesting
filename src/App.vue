@@ -48,7 +48,6 @@ export default {
 }
 
 h3 {
-  font-size: 1.5rem;
   letter-spacing: 1px;
 }
 

@@ -5,9 +5,7 @@
     </div>
 
     <div class="rpi-home-wrap">
-        <div class="text-block">
-          <h2>Let Us Assist You</h2>
-        </div>
+      <Assist />
         
       <div class="services-wrap">
         <section class="service">
@@ -78,10 +76,12 @@
 </template>
 
 <script>
+import Assist from '../components/AssistBanner'
 
 export default {
   name: 'RpiHome',
   components: {
+    Assist
   },
   props: {
     msg: String
@@ -105,16 +105,6 @@ export default {
 
   .rpi-home-wrap {
     max-width: 1250px;
-
-    .text-block {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      color: var(--l-blue);
-      margin-bottom: 40px;
-      padding: 20px;
-      font-size: 2rem;
-    }
 
     .services-wrap {
       display: grid;
@@ -145,6 +135,7 @@ export default {
           }
 
           h3 {
+            font-size: 1.5rem;
             margin: 15px 0px 10px;
           }
         }

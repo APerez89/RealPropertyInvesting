@@ -62,7 +62,7 @@ export default {
     .logo-wrap {
       img {
         width: 100%;
-        max-width: 175px;
+        max-width: 195px;
       }
     }
     
@@ -134,6 +134,7 @@ export default {
               flex-direction: column;
               position: absolute;
               background-color: var(--white);
+              box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
               padding: 10px 15px;
               top: 105%;
               left: 0;

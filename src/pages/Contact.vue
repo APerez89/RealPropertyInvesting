@@ -1,16 +1,15 @@
 <template>
     <div class="contact-wrap">
-        <ContactInfo />
+        <Form />
     </div>
 </template>
 
 <script>
-import ContactInfo from '../components/ContactInfo'
-
+import Form from '../components/RPIForm'
 export default {
     name: 'Contact',
     components: {
-        ContactInfo
+        Form
     }
 }
 </script>
