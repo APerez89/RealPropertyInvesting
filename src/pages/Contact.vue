@@ -1,7 +1,10 @@
 <template>
+  <div class="contact-contain">
     <div class="contact-wrap">
-        <Form />
+      <h2>Contact Us</h2>
+      <Form />
     </div>
+  </div>
 </template>
 
 <script>
@@ -15,5 +18,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact-contain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--l-blue);
+  }
+
+  .contact-wrap {
+    width: 100%;
+    max-width: 1250px;
+  }
+}
 
 </style>

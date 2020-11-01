@@ -51,6 +51,7 @@ export default {
   width: 100%;
   background-color: var(--white);
   box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+  z-index: 10;
 
   .nav-wrap {
     max-width: 1250px;
@@ -80,7 +81,7 @@ export default {
         li {
           height: 50px;
           padding: 10px 25px;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           cursor: pointer;
           transform: translateZ(0);
           backface-visibility: hidden;

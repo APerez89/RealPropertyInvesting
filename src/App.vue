@@ -32,6 +32,7 @@ export default {
   --l-blue: #057dca;
   --white: #f1f1f1;
   --d-gray: #2b2b2b;
+  --error: #f04b4b;
 }
 
 * {
@@ -40,7 +41,8 @@ export default {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
@@ -52,6 +54,7 @@ h3 {
 }
 
 p {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   line-height: 28px;
 }

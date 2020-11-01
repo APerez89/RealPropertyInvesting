@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .assist-contain {
+  
   .text-block {
     width: 100%;
     display: flex;
@@ -22,6 +23,7 @@ export default {
     margin-bottom: 40px;
     padding: 20px;
     font-size: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
 }
 </style>

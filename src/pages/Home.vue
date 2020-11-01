@@ -1,8 +1,6 @@
 <template>
   <div class="rpi-home-contain">
-    <div class="img-slider">
-      <img src="../assets/images/slide-2.jpg" />
-    </div>
+    <ImageCarousel />
 
     <div class="rpi-home-wrap">
       <Assist />
@@ -76,11 +74,13 @@
 </template>
 
 <script>
+import ImageCarousel from '../components/ImageCarousel'
 import Assist from '../components/AssistBanner'
 
 export default {
   name: 'RpiHome',
   components: {
+    ImageCarousel,
     Assist
   },
   props: {
@@ -96,12 +96,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  .img-slider {
-    img {
-      width: 100%;
-    }
-  }
 
   .rpi-home-wrap {
     max-width: 1250px;
@@ -143,6 +137,7 @@ export default {
 
         .learn-btn {
           text-decoration: none;
+          font-size: 1.1rem;
           color: var(--white);
           background-color: var(--l-blue);
           margin-top: 25px;

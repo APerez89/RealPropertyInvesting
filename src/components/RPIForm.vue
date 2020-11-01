@@ -9,85 +9,104 @@
             <!-- ** Name ** -->
             <div class="name form-section">
               <label for="full-name">Full Name</label>
-              <input type="text" name="full-name" placeholder="John Doe" v-model.trim="$v.name.$model" :class="{ 'error': $v.name.$error}">
+              <input type="text" name="full-name" placeholder="John Doe" v-model.trim="$v.name.$model" :class="{ 'error': status($v.name)}">
 
-              <div v-if="$v.name.$error" class="error-message">
-                <p v-if="!$v.name.required">Please fill out your full name.</p>
-                <p v-if="!$v.name.minLength">Must have at least {{ $v.name.$params.minLength.min }} letters.</p>
-                <span class="error-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                  </svg>
-                </span>
-              </div>
+              <p class="error-text" v-if="$v.name.$error && !$v.name.required">Please fill out your full name</p>
+              <p class="error-text" v-if="$v.name.$error && !$v.name.minLength">Must have at least {{ $v.name.$params.minLength.min }} letters</p>
             </div>
 
             <!-- ** Email ** -->
             <div class="email form-section">
               <label for="email">Email</label>
-              <input type="email" name="email" placeholder="distressed@email.com">
+              <input type="email" name="email" placeholder="example@email.com" v-model.trim="$v.email.$model" :class="{ 'error': status($v.email)}">
+
+              <p class="error-text" v-if="$v.email.$error && !$v.email.required">Please enter your email</p>
+              <p class="error-text" v-if="$v.email.$error && !$v.email.email">Please enter a valid email</p>
             </div>
 
             <div class="phone form-section">
             <!-- ** Phone ** -->
               <label for="phone">Phone Number</label>
-              <input type="tele" name="phone" placeholder="123-456-7890" maxlength="10">
+              <input type="tel" name="phone" placeholder="(123) 456-7890" maxlength="14" @input="phoneNumber" v-model.trim="$v.phone.$model" :class="{ 'error': status($v.phone)}">
+
+              <p class="error-text" v-if="$v.phone.$error && !$v.phone.required">Please enter your phone.</p>
+              <p class="error-text" v-if="$v.phone.$error && !$v.phone.minLength">Please enter a valid phone number</p>
             </div>
 
             <div class="address form-section">
             <!-- ** Address ** -->
               <label for="address">Address</label>
-              <input type="text" name="address" placeholder="12 Elm Street">
+              <input type="text" name="address" placeholder="12 Elm Street" v-model.trim="$v.address.$model" :class="{ 'error': status($v.address)}">
+
+              <p class="error-text" v-if="$v.address.$error && !$v.address.required">Please enter your address</p>
             </div>
 
             <div class="city form-section">
             <!-- ** City ** -->
               <label for="city">City</label>
-              <input type="text" name="city" placeholder="New York">
+              <input type="text" name="city" placeholder="New York" v-model.trim="$v.city.$model" :class="{ 'error': status($v.city)}">
+
+              <p class="error-text" v-if="$v.city.$error && !$v.city.required">Please enter your city</p>
             </div>
 
             <div class="state form-section">
               <!-- ** State ** -->
               <label for="state">State</label>
-              <select>
+              <select v-model.trim="$v.state.$model" :class="{ 'error': status($v.state)}">
                 <option value="" disabled selected>Select a state</option>
                 <option :value="state" v-for="state in states" :key="state">{{ state }}</option>
               </select>
+
+              <p class="error-text" v-if="$v.state.$error && !$v.state.required">Please select a state</p>
             </div>
           </div>
         </section>
 
         <section class="mortgage-details" v-if="isShortSale()">
-          <div class="form-section">
-            <!-- ** Mortgage ** -->
-            <label for="mortgage">Mortgage</label>
-            <input type="text" name="mortgage" placeholder="Amount Owed">
+          <div class="mortgage-info">
+            <div class="form-section">
+              <!-- ** Mortgage ** -->
+              <label for="mortgage">Mortgage</label>
+              <input type="text" name="mortgage" v-model="mortgage" placeholder="Amount Owed ($)">
+            </div>
           </div>
         </section>
 
         <section class="message-details">
           <h3>Additional Information</h3>
+          
           <div class="message-info">
             <div class="call form-section">
               <!-- ** Call ** -->
-              <label for="call"></label>
-              <input type="text" name="call" placeholder="Best time to call">
+              <label for="call">Best time to call</label>
+              <input type="text" name="call" placeholder="3pm" v-model="callTime">
             </div>
             <div class="description form-section">
               <!-- ** Description ** -->
-              <textarea textarea rows="10" cols="30" placeholder="Brief description"></textarea>
+              <textarea textarea rows="10" cols="30" placeholder="Brief description" v-model.trim="$v.description.$model" :class="{ 'error': status($v.description)}"></textarea>
+
+              <p class="error-text" v-if="$v.description.$error && !$v.description.required">Please add a brief description.</p>
             </div>
             <div class="repairs form-section" v-if="isDistressed()">
               <!-- ** Repairs ** -->
-              <textarea rows="10" cols="30" placeholder="Repairs Needed"></textarea>
+              <textarea rows="10" cols="30" placeholder="Repairs Needed" v-model="repairs"></textarea>
             </div>
           </div>
         </section>
 
-        <section class="radio" v-if="isShortSale()">
-          <label for="liens">Other Liens</label>
-          <input type="radio" name="home-liens">
-          <input type="radio" name="condo-liens">
+        <section class="radio-details" v-if="isShortSale()">
+          <h3>Other Liens</h3>
+
+          <div class="radio-options">
+            <div class="home-wrap">
+              <input type="radio" name="lien" id="home-lien" value="home" checked>
+              <label for="home-lien">Home</label>
+            </div>
+            <div class="condo-wrap">
+              <input type="radio" name="lien" id="condo-lien" value="condo">
+              <label for="condo-lien">Condo</label>
+            </div>
+          </div>
         </section>
 
         <button class="form-btn" type="submit" :disabled="submitStatus === 'PENDING'">Send</button>
@@ -98,7 +117,7 @@
 
 <script>
 import states from '../assets/states'
-import { required, minLength } from 'vuelidate/lib/validators'
+import { required, minLength, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'Form',
@@ -110,7 +129,11 @@ export default {
       phone: '',
       address: '',
       city: '',
+      state: '',
+      callTime: '',
+      mortgage: '',
       description: '',
+      repairs: '',
       submitStatus: null
     }
   },
@@ -118,9 +141,41 @@ export default {
     name: {
       required,
       minLength: minLength(4)
+    },
+    email: {
+      required,
+      email
+    },
+    phone: {
+      required,
+      minLength: minLength(10)
+    },
+    address: {
+      required
+    },
+    city: {
+      required
+    },
+    state: {
+      required
+    },
+    description: {
+      required
     }
   },
   methods: {
+    resetData() {
+      this.name = ''
+      this.email = ''
+      this.phone = ''
+      this.address = ''
+      this.city = ''
+      this.state = ''
+      this.callTime = ''
+      this.mortgage = ''
+      this.description = ''
+      this.repairs = ''
+    },
     isShortSale() {
       return this.$route.name === 'short-sale'
     },
@@ -137,20 +192,20 @@ export default {
       return this.$route.name === 'contact'
     },
     status(validation) {
-      return {
-        error: validation.$error
-      }
+      return typeof validation != "undefined" ? validation.$error : false;
     },
     submit() {
-      if(this.$v.$invalid) {
-        console.log('error')
-        this.submitStatus = 'ERROR'
-      } else {
-        this.submitStatus = "PENDING"
-        setTimeout(() => {
-          this.submitStatus = 'OK'
-        }, 500)
-      }
+      this.$v.$touch();
+      if(this.$v.$pending || this.$v.$error) return;
+
+      alert('Submitted');
+      this.$v.$reset;
+      this.resetData();
+    },
+    phoneNumber() {
+      let pNumber = this.$v.phone.$model;
+      let regPhone = pNumber.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+      return this.phone = !regPhone[2] ? regPhone[1] : '(' + regPhone[1] + ') ' + regPhone[2] + (regPhone[3] ? '-' + regPhone[3] : '');
     }
   }
 }
@@ -165,18 +220,47 @@ export default {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 20px;
+          margin-top: 10px;
           margin-bottom: 30px;
         }
+      }
+
+      .mortgage-info {
+        width: 30%;
+        margin-bottom: 30px;
       }
 
       .message-details {
         .message-info {
           display: grid;
           grid-gap: 20px;
+          margin-top: 10px;
           margin-bottom: 30px;
 
           input {
             width: 30%;
+          }
+        }
+      }
+
+      .radio-details {
+        .radio-options {
+          display: flex;
+          margin-top: 10px;
+          margin-bottom: 30px;
+
+          .home-wrap {
+            margin-right: 15px;
+
+            label {
+              margin-left: 10px;
+            }
+          }
+
+          .condo-wrap {
+            label {
+              margin-left: 10px;
+            }
           }
         }
       }
@@ -189,7 +273,7 @@ export default {
           margin-bottom: 5px;
         }
 
-        input, textarea {
+        input, textarea, select {
           padding: 13px;
           background-color: rgba(0,0,0,0);
           border: 1px solid var(--d-gray);
@@ -199,16 +283,35 @@ export default {
             border: 1px solid var(--l-blue);
           }
         }
+
+        select {
+          cursor: pointer;
+        }
+
+        textarea {
+          font-family: 'Poppins', sans-serif;
+          resize: none;
+        }
+
+        .error-text {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 5px;
+          padding: 5px;
+          color: var(--error);
+          animation: showError 0.2s ease alternate;
+          font-size: 0.95rem;
+        }
+
         .error {
-          border: 1px solid red;
+          border: 1px solid var(--error);
+          color: var(--error);
 
           &:focus {
-            border: 1px solid red;
+            border: 1px solid var(--error);
           }
-        }
-        .error-icon {
-          width: 25px;
-          color: red;
         }
       }
 
@@ -226,17 +329,24 @@ export default {
         &:hover {
           background-color: var(--d-blue);
         }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
 }
-.error {
-  border-color: red;
-  background: #FDD;
-}
 
-.error:focus {
-  outline-color: #F99;
+@keyframes showError {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>
