@@ -1,23 +1,31 @@
 <template>
   <div class="carousel-contain">
     <div class="carousel-wrap">
+      <div class="dark-bkg">
+        <div class="text-box"
+          v-for="(text, idx) in images"
+          :key="idx"
+          v-show="visibleSlide === idx"
+        >
+          <h1>{{ text.txt }}</h1>
+        </div>
+      </div>
       <div 
         class="carousel-slide"
         v-for="(image, idx) in images"
-        :index="idx"
-        :key="image"
+        :key="idx"
         v-show="visibleSlide === idx"
+        v-bind:style="`backgroundImage: url(${image.img});`"
         >
-        <img :src="image" />
       </div>
 
     </div>
-    <button class="prev">
+    <button class="prev" @click="prev">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
       </svg>
     </button>
-    <button class="next">
+    <button class="next" @click="next">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
       </svg>
@@ -31,12 +39,46 @@ export default {
   data() {
     return {
       images: [
-        '/img/slide-1.1d97442e.jpg',
-        '/img/slide-2.c1f2a9f3.jpg',
-        '/img/slide-3.95f78aec.png',
-        '/img/slide-4.133eb58e.jpg'
+        {
+          img: '/images/slide-3.png',
+          txt: 'Distressed Property Specialist'
+        },
+        {
+          img: '/images/slide-1.jpg',
+          txt: 'Premier Realtor'
+        },
+        {
+          img: '/images/slide-2.jpg',
+          txt: 'Short Sale Negotiator'
+        },
+        {
+          img: '/images/slide-4.jpg',
+          txt: 'Real Estate Investor'
+        },
       ],
       visibleSlide: 0
+    }
+  },
+  computed: {},
+  mounted() {
+    setInterval(() => {
+      this.next()
+    }, 4000);
+  },
+  methods: {
+    prev() {
+      if(this.visibleSlide <= 0) {
+        this.visibleSlide = this.images.length - 1;
+      } else {
+        this.visibleSlide--;
+      }
+    },
+    next() {
+      if(this.visibleSlide >= this.images.length - 1) {
+        this.visibleSlide = 0
+      } else {
+        this.visibleSlide++;
+      }
     }
   }
 }
@@ -49,32 +91,68 @@ export default {
   overflow: hidden;
 
   .carousel-wrap {
-    .carousel-slide {
+    position: relative;
 
-      img {
-        width: 100%;
+    .dark-bkg {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: rgba(0,0,0,0.3);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .text-box {
+        color: var(--white);
+        font-size: 2rem;
+        text-shadow: -2px 2px 10px rgba(0,0,0,0.3);
+        animation: fadeIn 1.5s ease-in;
       }
+    }
+    .carousel-slide {
+      height: calc(100vh - 250px);
+      background-size: cover;
+      background-position: 50%;
+      background-repeat: no-repeat;
     }
   }
   button {
     width: 60px;
     border: none;
     background-color: rgba(0,0,0,0);
-    color: var(--d-gray);
+    color: var(--white);
     position: absolute;
     cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
 
     &:focus, &:active {
       outline: none;
     }
+
+    &:hover {
+      background-color: rgba(0,0,0,0.3);
+    }
   }
   .next {
     top: calc(50% - 20px);
-    right: 0;
+    right: calc(0px + 15px);
   }
   .prev {
     top: calc(50% - 20px);
-    left: 0;
+    left: calc(0px + 15px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

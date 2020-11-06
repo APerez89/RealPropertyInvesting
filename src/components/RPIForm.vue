@@ -29,7 +29,7 @@
               <label for="phone">Phone Number</label>
               <input type="tel" name="phone" placeholder="(123) 456-7890" maxlength="14" @input="phoneNumber" v-model.trim="$v.phone.$model" :class="{ 'error': status($v.phone)}">
 
-              <p class="error-text" v-if="$v.phone.$error && !$v.phone.required">Please enter your phone.</p>
+              <p class="error-text" v-if="$v.phone.$error && !$v.phone.required">Please enter your phone</p>
               <p class="error-text" v-if="$v.phone.$error && !$v.phone.minLength">Please enter a valid phone number</p>
             </div>
 
@@ -85,7 +85,7 @@
               <!-- ** Description ** -->
               <textarea textarea rows="10" cols="30" placeholder="Brief description" v-model.trim="$v.description.$model" :class="{ 'error': status($v.description)}"></textarea>
 
-              <p class="error-text" v-if="$v.description.$error && !$v.description.required">Please add a brief description.</p>
+              <p class="error-text" v-if="$v.description.$error && !$v.description.required">Please add a brief description</p>
             </div>
             <div class="repairs form-section" v-if="isDistressed()">
               <!-- ** Repairs ** -->
@@ -199,7 +199,7 @@ export default {
       if(this.$v.$pending || this.$v.$error) return;
 
       alert('Submitted');
-      this.$v.$reset;
+      this.$v.$reset();
       this.resetData();
     },
     phoneNumber() {

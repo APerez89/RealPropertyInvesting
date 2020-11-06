@@ -14,7 +14,7 @@
 <script>
 import Home from './pages/Home'
 import Nav from './components/RPINav'
-import Footer from './components/RPIFooter'
+import Footer from './components/FooterNew'
 
 export default {
   name: 'App',
@@ -43,6 +43,7 @@ export default {
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   font-family: 'Raleway', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
