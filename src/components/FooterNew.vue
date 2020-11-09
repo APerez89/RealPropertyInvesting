@@ -8,16 +8,19 @@
           <h3>Connect</h3>
 
           <div class="connect-info">
-            <p>(203) 539-1051</p>
-
-            <div class="email">
-              <a href="mailto:realpropertyinvesting101@gmail.com?subject=Important!&body=Hi" target="_blank" rel="noopener noreferrer">realpropertyinvesting101@gmail.com</a>
-            </div>
+            <p>Real Property Investing</p>
 
             <div class="pobox">
               <p>P.O. Box 113303</p>
               <p>Stamford, CT 06911</p>
             </div>
+
+            <p class="phone-number">(203) 539-1051</p>
+
+            <div class="email">
+              <a href="mailto:realpropertyinvesting101@gmail.com?subject=Important!&body=Hi" target="_blank" rel="noopener noreferrer">realpropertyinvesting101@gmail.com</a>
+            </div>
+
           </div>
 
         </div>
@@ -86,8 +89,6 @@ export default {
 
         .connect-info {
           .email {
-            margin: 20px 0px;
-
             a {
               color: var(--white);
               text-decoration: none;
@@ -123,6 +124,7 @@ export default {
 
         .icons {
           .icon-tag {
+            font-size: 1.3rem;
             color: var(--white);
             transition: all 0.2s ease-in-out;
 

@@ -41,7 +41,7 @@ export default {
       images: [
         {
           img: '/images/slide-3.png',
-          txt: 'Distressed Property Specialist'
+          txt: 'Fix & Flip Rehabber'
         },
         {
           img: '/images/slide-1.jpg',
@@ -62,9 +62,9 @@ export default {
   computed: {},
   mounted() {
     // set timer on next() function
-    setInterval(() => {
-      this.next()
-    }, 4000);
+    // setInterval(() => {
+    //   this.next()
+    // }, 4000);
   },
   methods: {
     // Click Prev button to move count down to the previous index
@@ -110,9 +110,15 @@ export default {
 
       .text-box {
         color: var(--white);
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-shadow: -2px 2px 10px rgba(0,0,0,0.3);
         animation: fadeIn 1.5s ease-in;
+        letter-spacing: 3px;
+        border-bottom: 4px solid var(--white);
+
+        h1 {
+          padding-bottom: 5px;
+        }
       }
     }
     .carousel-slide {
