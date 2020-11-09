@@ -1,7 +1,7 @@
 <template>
   <div class="form-contain">
     <div class="form-wrap">
-      <form @submit.prevent="submit">
+      <form @submit.prevent="submit" action="POST" data-netlify="true">
         <section class="personal-details">
           <h3>Personal Details</h3>
 
@@ -52,9 +52,9 @@
             <div class="state form-section">
               <!-- ** State ** -->
               <label for="state">State</label>
-              <select v-model.trim="$v.state.$model" :class="{ 'error': status($v.state)}">
+              <select v-model.trim="$v.state.$model" name="select-state" :class="{ 'error': status($v.state)}">
                 <option value="" disabled selected>Select a state</option>
-                <option :value="state" v-for="state in states" :key="state">{{ state }}</option>
+                <option :value="state" v-for="state in states" :key="state" name="state">{{ state }}</option>
               </select>
 
               <p class="error-text" v-if="$v.state.$error && !$v.state.required">Please select a state</p>
@@ -83,13 +83,13 @@
             </div>
             <div class="description form-section">
               <!-- ** Description ** -->
-              <textarea textarea rows="10" cols="30" placeholder="Brief description" v-model.trim="$v.description.$model" :class="{ 'error': status($v.description)}"></textarea>
+              <textarea textarea rows="10" cols="30" name="description" placeholder="Brief description" v-model.trim="$v.description.$model" :class="{ 'error': status($v.description)}"></textarea>
 
               <p class="error-text" v-if="$v.description.$error && !$v.description.required">Please add a brief description</p>
             </div>
             <div class="repairs form-section" v-if="isDistressed()">
               <!-- ** Repairs ** -->
-              <textarea rows="10" cols="30" placeholder="Repairs Needed" v-model="repairs"></textarea>
+              <textarea rows="10" cols="30" name="distressed" placeholder="Repairs Needed" v-model="repairs"></textarea>
             </div>
           </div>
         </section>
@@ -100,16 +100,16 @@
           <div class="radio-options">
             <div class="home-wrap">
               <input type="radio" name="lien" id="home-lien" value="home" checked>
-              <label for="home-lien">Home</label>
+              <label for="home-lien" name="home">Home</label>
             </div>
             <div class="condo-wrap">
               <input type="radio" name="lien" id="condo-lien" value="condo">
-              <label for="condo-lien">Condo</label>
+              <label for="condo-lien" name="condo">Condo</label>
             </div>
           </div>
         </section>
 
-        <button class="form-btn" :class="{ 'button-err': $v.$error}" type="submit" :disabled="submitStatus === 'PENDING'">Send</button>
+        <button class="form-btn" name="submit" :class="{ 'button-err': $v.$error}" type="submit" :disabled="submitStatus === 'PENDING'">Send</button>
       </form>
     </div>
   </div>
