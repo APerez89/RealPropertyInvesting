@@ -1,7 +1,7 @@
 <template>
   <div class="form-contain">
     <div class="form-wrap">
-      <form @submit.prevent="submit" action="POST" data-netlify="true">
+      <form action="POST" data-netlify="true">
         <section class="personal-details">
           <h3>Personal Details</h3>
 
