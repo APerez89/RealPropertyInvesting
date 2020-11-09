@@ -64,11 +64,12 @@ export default {
   background-color: var(--d-gray);
 
   .footer-wrap {
+    width: 100%;
+    max-width: 1250px;
     color: var(--white);
 
     .footer-info {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       margin-bottom: 35px;
 
@@ -112,6 +113,7 @@ export default {
         height: 90px;
         background-color: var(--white);
         opacity: 0.1;
+        margin: 0px 50px;
       }
 
       .social-wrap {
