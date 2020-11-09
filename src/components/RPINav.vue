@@ -200,7 +200,7 @@ export default {
 
         &::before {
           content: '';
-          width: 2px;
+          width: 1px;
           height: 55px;
           background-color: var(--l-blue);
           margin: 0px 15px;

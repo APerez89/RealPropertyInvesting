@@ -109,7 +109,7 @@
           </div>
         </section>
 
-        <button class="form-btn" type="submit" :disabled="submitStatus === 'PENDING'">Send</button>
+        <button class="form-btn" :class="{ 'button-err': $v.$error}" type="submit" :disabled="submitStatus === 'PENDING'">Send</button>
       </form>
     </div>
   </div>
@@ -325,6 +325,7 @@ export default {
         border-radius: 50px;
         font-size: 1rem;
         cursor: pointer;
+        transition: all 0.2s ease-in-out;
 
         &:hover {
           background-color: var(--d-blue);
@@ -334,18 +335,46 @@ export default {
           outline: none;
         }
       }
+
+      .button-err {
+        background-color: var(--error);
+        animation: errorButton 0.2s ease-in-out;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: var(--error);
+        }
+      }
     }
   }
 }
 
 @keyframes showError {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(-10px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes errorButton {
+  0% {
+    transform: translateX(-15px);
+  }
+  25% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 

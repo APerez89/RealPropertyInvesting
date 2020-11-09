@@ -61,11 +61,13 @@ export default {
   },
   computed: {},
   mounted() {
+    // set timer on next() function
     setInterval(() => {
       this.next()
     }, 4000);
   },
   methods: {
+    // Click Prev button to move count down to the previous index
     prev() {
       if(this.visibleSlide <= 0) {
         this.visibleSlide = this.images.length - 1;
@@ -73,6 +75,7 @@ export default {
         this.visibleSlide--;
       }
     },
+    // Click Next button to move count up to the next index
     next() {
       if(this.visibleSlide >= this.images.length - 1) {
         this.visibleSlide = 0

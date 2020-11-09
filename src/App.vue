@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="out-in" appear>
       <router-view>
         <Home />
       </router-view>
@@ -58,5 +58,13 @@ p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   line-height: 28px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
