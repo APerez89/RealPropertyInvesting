@@ -198,7 +198,6 @@ export default {
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
 
-      alert('Submitted');
       this.$v.$reset();
       this.resetData();
     },
