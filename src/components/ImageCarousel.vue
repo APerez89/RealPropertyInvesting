@@ -62,9 +62,9 @@ export default {
   computed: {},
   mounted() {
     // set timer on next() function
-    // setInterval(() => {
-    //   this.next()
-    // }, 4000);
+    setInterval(() => {
+      this.next()
+    }, 4000);
   },
   methods: {
     // Click Prev button to move count down to the previous index

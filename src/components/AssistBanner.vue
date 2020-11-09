@@ -24,6 +24,7 @@ export default {
     padding: 20px;
     font-size: 2rem;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    letter-spacing: 2px;
   }
 }
 </style>
