@@ -9,7 +9,7 @@
         <section class="service">
           <div class="service-info">
             <div class="service-img-wrap">
-              <img src="../assets/images/distressed-4.jpg" alt="">
+              <img src="/images/distressed-4.jpg" alt="">
             </div>
 
             <h3>Distressed Property Specialist</h3>
@@ -25,7 +25,7 @@
         <section class="service">
           <div class="service-info">
             <div class="service-img-wrap">
-              <img src="../assets/images/negotiate-1.jpg" alt="">
+              <img src="/images/negotiate-1.jpg" alt="">
             </div>
 
             <h3>Licensed Short Sale Negotiator</h3>
@@ -40,7 +40,7 @@
         <section class="service">
           <div class="service-info">
             <div class="service-img-wrap">
-              <img src="../assets/images/check.jpg" alt="">
+              <img src="/images/check.jpg" alt="">
             </div>
 
             <h3>Real Estate Investor</h3>
@@ -55,7 +55,7 @@
         <section class="service">
           <div class="service-info">
             <div class="service-img-wrap">
-              <img src="../assets/images/realtor.jpg" alt="">
+              <img src="/images/realtor.jpg" alt="">
             </div>
 
             <h3>Premier Realtor</h3>
