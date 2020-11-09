@@ -6,7 +6,7 @@
       <div class="content-wrap">
 
         <div class="img-wrap">
-          <img src="/images/check.jpg" alt="Distressed Property">
+          <img src="../assets/images/check.jpg" alt="Distressed Property">
         </div>
 
         <div class="content">
