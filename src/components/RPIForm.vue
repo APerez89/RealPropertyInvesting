@@ -213,6 +213,8 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       }
+      this.$v.$touch();
+      if(this.$v.$pending || this.$v.$error) return;
       axios.post(
         "/",
         this.encode({
@@ -227,8 +229,6 @@ export default {
       .catch(() => {
         this.$router.push('404')
       })
-      this.$v.$touch();
-      if(this.$v.$pending || this.$v.$error) return;
 
       this.$v.$reset();
       this.resetData();

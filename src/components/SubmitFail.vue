@@ -2,7 +2,7 @@
     <div class="submit-fail-contain">
         <h1>Oops, looks like something went wrong!</h1>
         <router-link to="/">
-            <button>Back to form</button>
+            <button>Back to home</button>
         </router-link>
     </div>
 </template>
