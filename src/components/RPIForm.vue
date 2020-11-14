@@ -1,7 +1,14 @@
 <template>
   <div class="form-contain">
     <div class="form-wrap">
-      <form @submit.prevent="submit" action="POST" data-netlify="true">
+      <form
+        name="submit-form"
+        @submit.prevent="submit"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+      <input type="hidden" name="form-name" value="submit-form" />
         <section class="personal-details">
           <h3>Personal Details</h3>
 
