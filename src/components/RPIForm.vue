@@ -123,6 +123,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import states from '../assets/states'
 import { required, minLength, email } from 'vuelidate/lib/validators'
 
@@ -201,7 +202,31 @@ export default {
     status(validation) {
       return typeof validation != "undefined" ? validation.$error : false;
     },
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key =>`${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&")
+    },
     submit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      }
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "submig-form",
+          ...this.form
+        }),
+        axiosConfig
+      )
+      .then(() => {
+        this.$route.push('thanks')
+      })
+      .catch(() => {
+        this.$route.push('404')
+      })
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
 
@@ -212,7 +237,7 @@ export default {
       let pNumber = this.$v.phone.$model;
       let regPhone = pNumber.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
       return this.phone = !regPhone[2] ? regPhone[1] : '(' + regPhone[1] + ') ' + regPhone[2] + (regPhone[3] ? '-' + regPhone[3] : '');
-    }
+    },
   }
 }
 </script>

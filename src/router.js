@@ -7,6 +7,8 @@ import Investor from './pages/Investor'
 import Realtor from './pages/Realtor'
 import ShortSale from './pages/ShortSale'
 import Contact from './pages/Contact'
+import SubmitSuccess from './components/SubmitSuccess'
+import SubmitFail from './components/SubmitFail'
 
 Vue.use(Router)
 
@@ -48,6 +50,16 @@ export default new Router({
             path: '/Contact',
             name: 'contact',
             component: Contact
+        },
+        {
+            path: '/thanks',
+            name: 'success',
+            component: SubmitSuccess
+        },
+        {
+            path: '/404',
+            name: 'fail',
+            component: SubmitFail
         }
     ]
 })
