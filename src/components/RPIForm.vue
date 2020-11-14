@@ -222,10 +222,10 @@ export default {
         axiosConfig
       )
       .then(() => {
-        this.$route.push('thanks')
+        this.$router.push('thanks')
       })
       .catch(() => {
-        this.$route.push('404')
+        this.$router.push('404')
       })
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
