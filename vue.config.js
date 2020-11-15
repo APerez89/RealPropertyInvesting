@@ -6,9 +6,9 @@ module.exports = {
     if (process.env.NODE_ENV !== 'production') return;
     return {
       plugins: [
-        new PrerenderSPAPlugin(
-          path.resolve(__dirname, 'dist'),
-          [
+        new PrerenderSPAPlugin({
+          staticDir: path.join(__dirname, 'dist'),
+          routes: [
             '/',
             '/About',
             '/Distressed',
@@ -18,8 +18,8 @@ module.exports = {
             '/Contact',
             '/thanks',
             '/404'
-          ]
-        ),
+          ],
+        }),
       ]
     }
   }
