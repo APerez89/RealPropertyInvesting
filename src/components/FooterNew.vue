@@ -146,4 +146,26 @@ export default {
     }
   }
 }
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .footer-contain {
+    .footer-wrap {
+      .footer-info {
+        flex-direction: column;
+
+        .divider {
+          width: 100%;
+          height: 1px;
+          margin: 30px 0px;
+        }
+
+        .email {
+          a {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

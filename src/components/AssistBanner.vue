@@ -21,10 +21,20 @@ export default {
     justify-content: center;
     color: var(--l-blue);
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 60px 20px 20px;
     font-size: 2rem;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     letter-spacing: 2px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .assist-contain {
+    padding: 5px;
+    .text-block {
+      text-align: center;
+      font-size: 1.2rem;
+    }
   }
 }
 </style>

@@ -153,4 +153,25 @@ export default {
   }
 }
 
+@media (min-width: 320px) and  (max-width: 380px) {
+  .rpi-home-contain {
+    .rpi-home-wrap {
+      .services-wrap {
+        grid-template-columns: 1fr;
+
+        .service {
+
+          .service-info {
+            min-height: auto;
+
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 </style>

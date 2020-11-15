@@ -7,7 +7,14 @@
         </router-link>
       </div>
 
+      <div class="hamburger" @click="navOpen = !navOpen" :class="['open', navOpen = true ? 'true' : 'false']">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+
       <div class="nav-items">
+
         <ul>
           <li><router-link class="link" to="/">Home</router-link></li>
           <li><router-link class="link" to="/About">About</router-link></li>
@@ -38,41 +45,6 @@
             <font-awesome-icon class="icon ig" :icon="['fab', 'instagram']" />
           </a>
         </div>
-        <!-- <div class="contact-card">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-          </svg>
-
-          <div class="contact-card-info">
-            <div class="cc-phone cc-info-wrapper">
-              <span class="phone-icon cc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-              </span>
-              <p>(203)539-1051</p>
-            </div>
-            <div class="cc-email cc-info-wrapper">
-              <span class="email-icon cc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd" />
-                </svg>
-              </span>
-              <p>
-                <a href="">realpropertyinvesting101@gmail.com</a>
-              </p>
-            </div>
-            <div class="cc-pobox cc-info-wrapper">
-              <span class="pobox-icon cc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </span>
-              <p>P.O. Box 113303</p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -80,7 +52,12 @@
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  data() {
+    return {
+      navOpen: false
+    }
+  }
 }
 </script>
 
@@ -103,6 +80,10 @@ export default {
         width: 100%;
         max-width: 195px;
       }
+    }
+
+    .hamburger {
+      display: none;
     }
     
     .nav-items {
@@ -268,5 +249,68 @@ export default {
     }
   }
 
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .nav-contain {
+    .nav-wrap {
+      position: relative;
+      overflow: hidden;
+
+      .logo-wrap {
+        img {
+          width: 100%;
+          max-width: 125px;
+        }
+      }
+      .hamburger {
+        width: 35px;
+        display: block;
+        position: absolute;
+        right: 0;
+        z-index: 10;
+      }
+      .nav-items {
+        flex-direction: column;
+        padding: 80px 10px 0px;
+        background-color: var(--white);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(100%);
+        animation: NavSlideIn 0.3s ease-in-out;
+
+        ul {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        .social-wrap {
+          flex-direction: column;
+
+          &::before {
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+          }
+
+          .icon-tag {
+            padding: 10px 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes NavSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 </style>

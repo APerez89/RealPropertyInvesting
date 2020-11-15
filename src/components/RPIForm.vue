@@ -218,7 +218,7 @@ export default {
       axios.post(
         "/",
         this.encode({
-          "form-name": "submig-form",
+          "form-name": "submit-form",
           ...this.form
         }),
         axiosConfig
