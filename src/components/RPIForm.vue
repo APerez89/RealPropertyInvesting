@@ -183,15 +183,6 @@ export default {
     isDistressed() {
       return this.$route.name === 'distressed'
     },
-    isInvestor() {
-      return this.$route.name === 'investor'
-    },
-    isRealtor() {
-      return this.$route.name === 'realtor'
-    },
-    isContact() {
-      return this.$route.name === 'contact'
-    },
     status(validation) {
       return typeof validation != "undefined" ? validation.$error : false;
     },
@@ -207,7 +198,18 @@ export default {
         {
           method: 'post',
           mode: 'no-cors',
-          body: JSON.stringify(this.$data),
+          body: JSON.stringify(
+            this.name,
+            this.email,
+            this.phone,
+            this.address,
+            this.city,
+            this.state,
+            this.callTime,
+            this.mortgage,
+            this.description,
+            this.repairs
+          ),
         }
       )
       .then((response) => response.json())
