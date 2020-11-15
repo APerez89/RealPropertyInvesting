@@ -1,13 +1,7 @@
 <template>
   <div class="form-contain">
     <div class="form-wrap">
-      <form
-        name="submit-form"
-        @submit.prevent="submit"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
+      <form @submit.prevent="submit">
       <input type="hidden" name="form-name" value="submit-form" />
         <section class="personal-details">
           <h3>Personal Details</h3>
@@ -123,7 +117,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import states from '../assets/states'
 import { required, minLength, email } from 'vuelidate/lib/validators'
 
@@ -202,33 +195,9 @@ export default {
     status(validation) {
       return typeof validation != "undefined" ? validation.$error : false;
     },
-    encode (data) {
-      return Object.keys(data)
-        .map(
-          key =>`${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join("&")
-    },
     submit() {
-      const axiosConfig = {
-        header: { "Content-Type": "application/x-www-form-urlencoded" }
-      }
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
-      axios.post(
-        "/",
-        this.encode({
-          "form-name": "submit-form",
-          ...this.form
-        }),
-        axiosConfig
-      )
-      .then(() => {
-        this.$router.push('thanks')
-      })
-      .catch(() => {
-        this.$router.push('404')
-      })
 
       this.$v.$reset();
       this.resetData();
