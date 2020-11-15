@@ -52,7 +52,7 @@ export default new Router({
             component: Contact
         },
         {
-            path: '/thanks',
+            path: '/Thanks',
             name: 'success',
             component: SubmitSuccess
         },
