@@ -9,15 +9,7 @@ module.exports = {
         new PrerenderSPAPlugin({
           staticDir: path.resolve(__dirname, 'dist'),
           routes: [
-            '/',
-            '/About',
             '/Distressed',
-            '/Investor',
-            '/Realtor',
-            '/Short-Sale',
-            '/Contact',
-            '/Thanks',
-            '/404'
           ],
         }),
       ]
