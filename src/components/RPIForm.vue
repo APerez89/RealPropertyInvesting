@@ -201,6 +201,22 @@ export default {
 
       this.$v.$reset();
       this.resetData();
+
+      fetch(
+        'https://dreamy-shirley-6cfb3f.netlify.app/.netlify/functions/email',
+        {
+          method: 'post',
+          mode: 'no-cors',
+          body: JSON.stringify(this.$data),
+        }
+      )
+      .then((response) => response.json())
+      .then(() => {
+        this.$router.push('/Thanks')
+      })
+      .catch(() => {
+        this.$router.push('/404')
+      });
     },
     phoneNumber() {
       let pNumber = this.$v.phone.$model;
