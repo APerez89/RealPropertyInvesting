@@ -182,11 +182,11 @@ export default {
       width: 50px;
     }
     .next {
-      top: calc(50% - 50px);
+      // top: calc(50% - 50px);
       right: 0px;
     }
     .prev {
-      top: calc(50% - 50px);
+      // top: calc(50% - 50px);
       left: 0px;
     }
   }
