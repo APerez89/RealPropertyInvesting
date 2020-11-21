@@ -198,18 +198,18 @@ export default {
         {
           method: 'post',
           mode: 'no-cors',
-          body: JSON.stringify(
-            this.name,
-            this.email,
-            this.phone,
-            this.address,
-            this.city,
-            this.state,
-            this.callTime,
-            this.mortgage,
-            this.description,
-            this.repairs
-          ),
+          body: JSON.stringify({
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            address: this.address,
+            city: this.city,
+            state: this.state,
+            callTime: this.callTime,
+            mortgage: this.mortgage,
+            description: this.description,
+            repairs: this.repairs
+          }),
         }
       )
       .then((response) => response.json())

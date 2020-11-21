@@ -11,11 +11,11 @@ exports.handler = (event, context, callback) => {
     secure: true,
     auth: {
       type: 'OAuth2',
-      user: 'alexperez689@gmail.com',
+      user: 'perezdevtesting@gmail.com',
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-    //   refreshToken: process.env.REFRESH_TOKEN,
-    //   accessToken: process.env.ACCESS_TOKEN,
+      refreshToken: process.env.REFRESH_TOKEN,
+      accessToken: process.env.ACCESS_TOKEN,
     },
   });
 
@@ -38,7 +38,7 @@ exports.handler = (event, context, callback) => {
 
   transport.sendMail({
     from: 'yourmom.com',
-    to: ['alexperez689@gmail.com'],
+    to: ['perezdevtesting@gmail.com'],
     subject: 'Real Property Investing Contact',
     html,
   }, (error) => {

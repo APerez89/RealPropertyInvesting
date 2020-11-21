@@ -11,7 +11,8 @@
             <p>Real Property Investing</p>
 
             <div class="pobox">
-              <p>P.O. Box 113303</p>
+              <p>317 West Avenue</p>
+              <p>Suite 113303</p>
               <p>Stamford, CT 06911</p>
             </div>
 
