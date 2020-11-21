@@ -182,6 +182,7 @@ export default {
       width: 50px;
     }
     .next {
+      top: 50%;
       // top: calc(50% - 50px);
       right: 0px;
     }
