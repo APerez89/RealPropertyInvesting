@@ -165,4 +165,31 @@ export default {
   }
 }
 
+@media (min-width: 320px) and (max-width: 380px) {
+  .carousel-contain {
+    .carousel-wrap {
+      .dark-bkg {
+        padding: 50px;
+
+        .text-box {
+          font-size: 0.8rem;
+          text-align: center;
+          border-bottom: 2px solid var(--white);
+        }
+      }
+    }
+    button {
+      width: 50px;
+    }
+    .next {
+      top: calc(50% - 50px);
+      right: 0px;
+    }
+    .prev {
+      top: calc(50% - 50px);
+      left: 0px;
+    }
+  }
+}
+
 </style>

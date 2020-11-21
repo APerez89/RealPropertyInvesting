@@ -63,7 +63,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 80px;
   padding: 40px;
   background-color: var(--d-gray);
 

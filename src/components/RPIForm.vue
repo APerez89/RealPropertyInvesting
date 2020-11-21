@@ -149,7 +149,7 @@ export default {
     },
     phone: {
       required,
-      minLength: minLength(10)
+      minLength: minLength(14)
     },
     address: {
       required
