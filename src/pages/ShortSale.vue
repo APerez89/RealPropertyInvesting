@@ -1,12 +1,12 @@
 <template>
-  <div class="distressed-contain">
+  <div class="short-sale-contain">
 
-    <div class="distressed-wrap">
+    <div class="short-sale-wrap">
 
       <div class="content-wrap">
 
         <div class="img-wrap">
-          <img src="/images/negotiate-1.jpg" alt="Distressed Property">
+          <img src="/images/negotiate-1.jpg" alt="Two men negotiating">
         </div>
 
         <div class="content">
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.distressed-contain {
+.short-sale-contain {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ export default {
     margin-bottom: 8px;
   }
 
-  .distressed-wrap {
+  .short-sale-wrap {
     width: 100%;
     max-width: 1250px;
 
@@ -146,6 +146,27 @@ export default {
           &:hover {
             background-color: var(--d-blue);
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .short-sale-contain {
+    padding: 10px;
+
+    .short-sale-wrap {
+      .content-wrap {
+        flex-direction: column;
+        align-items: center;
+
+        .img-wrap {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
         }
       }
     }

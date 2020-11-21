@@ -7,13 +7,13 @@
         </router-link>
       </div>
 
-      <div class="hamburger" @click="navOpen = !navOpen" :class="['open', navOpen = true ? 'true' : 'false']">
+      <div class="hamburger" @click="navOpen = !navOpen">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </div>
 
-      <div class="nav-items">
+      <div class="nav-items" :class="[navOpen ? 'mobile-nav-open' : 'mobile-nav-closed']">
 
         <ul>
           <li><router-link class="link" to="/">Home</router-link></li>
@@ -279,8 +279,8 @@ export default {
         right: 0;
         bottom: 0;
         left: 0;
-        transform: translateX(100%);
-        animation: NavSlideIn 0.3s ease-in-out;
+        z-index: 9;
+        transition: all 0.3s ease-in-out;
 
         ul {
           align-items: start;
@@ -301,16 +301,13 @@ export default {
           }
         }
       }
+      .mobile-nav-open {
+        transform: translateX(0);
+      }
+      .mobile-nav-closed {
+        transform: translateX(100%);
+      }
     }
-  }
-}
-
-@keyframes NavSlideIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
   }
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="distressed-contain">
+  <div class="investor-contain">
 
-    <div class="distressed-wrap">
+    <div class="investor-wrap">
 
       <div class="content-wrap">
 
         <div class="img-wrap">
-          <img src="/images/check.jpg" alt="Distressed Property">
+          <img src="/images/check.jpg" alt="Signing a check">
         </div>
 
         <div class="content">
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.distressed-contain {
+.investor-contain {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@ export default {
     margin-bottom: 8px;
   }
 
-  .distressed-wrap {
+  .investor-wrap {
     width: 100%;
     max-width: 1250px;
 
@@ -145,6 +145,27 @@ export default {
           &:hover {
             background-color: var(--d-blue);
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .investor-contain {
+    padding: 10px;
+
+    .investor-wrap {
+      .content-wrap {
+        flex-direction: column;
+        align-items: center;
+
+        .img-wrap {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
         }
       }
     }

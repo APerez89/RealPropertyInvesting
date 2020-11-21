@@ -1,12 +1,12 @@
 <template>
-  <div class="distressed-contain">
+  <div class="realtor-contain">
 
-    <div class="distressed-wrap">
+    <div class="realtor-wrap">
 
       <div class="content-wrap">
 
         <div class="img-wrap">
-          <img src="/images/realtor.jpg" alt="Distressed Property">
+          <img src="/images/realtor.jpg" alt="Realtor showing home to a family">
         </div>
 
         <div class="content">
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.distressed-contain {
+.realtor-contain {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@ export default {
     margin-bottom: 8px;
   }
 
-  .distressed-wrap {
+  .realtor-wrap {
     width: 100%;
     max-width: 1250px;
 
@@ -145,6 +145,27 @@ export default {
           &:hover {
             background-color: var(--d-blue);
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .realtor-contain {
+    padding: 10px;
+
+    .realtor-wrap {
+      .content-wrap {
+        flex-direction: column;
+        align-items: center;
+
+        .img-wrap {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
         }
       }
     }

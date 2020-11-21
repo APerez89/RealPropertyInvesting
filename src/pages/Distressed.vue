@@ -6,7 +6,7 @@
       <div class="content-wrap">
 
         <div class="img-wrap">
-          <img src="/images/distressed-1.jpg" alt="Distressed Property">
+          <img src="/images/distressed-1.jpg" alt="Distressed property and renovated property">
         </div>
 
         <div class="content">
@@ -91,6 +91,27 @@ export default {
         }
       }
 
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .distressed-contain {
+    padding: 10px;
+
+    .distressed-wrap {
+      .content-wrap {
+        flex-direction: column;
+        align-items: center;
+
+        .img-wrap {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
+        }
+      }
     }
   }
 }

@@ -367,6 +367,25 @@ export default {
   }
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .form-contain {
+    padding: 5px;
+    
+    .form-wrap {
+      form {
+        .personal-details {
+          .personal-info {
+            grid-template-columns: 1fr;
+          }
+        }
+        .form-btn {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
 @keyframes showError {
   from {
     opacity: 0;

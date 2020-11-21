@@ -30,10 +30,10 @@ export default {
 
 @media (min-width: 320px) and (max-width: 380px) {
   .assist-contain {
-    padding: 5px;
     .text-block {
       text-align: center;
       font-size: 1.2rem;
+      padding-top: 20px;
     }
   }
 }
