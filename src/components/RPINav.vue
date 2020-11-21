@@ -251,7 +251,7 @@ export default {
 
 }
 
-@media (min-width: 320px) and (max-width: 380px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .nav-contain {
     .nav-wrap {
       position: relative;

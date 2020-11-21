@@ -152,7 +152,7 @@ export default {
   }
 }
 
-@media (min-width: 320px) and (max-width: 380px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .short-sale-contain {
     padding: 10px;
 
