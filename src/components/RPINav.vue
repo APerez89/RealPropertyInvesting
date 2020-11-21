@@ -285,6 +285,23 @@ export default {
         ul {
           align-items: start;
           flex-direction: column;
+
+          .dropdown {
+            &:focus {
+              .drop-items {
+                width: max-content;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: var(--white);
+                box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+                padding: 10px 15px;
+                top: 105%;
+                font-weight: 500;
+                letter-spacing: 0;
+                left: 0;
+            }
+          }
         }
 
         .social-wrap {
