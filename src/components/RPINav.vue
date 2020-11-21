@@ -300,6 +300,7 @@ export default {
                 font-weight: 500;
                 letter-spacing: 0;
                 left: 0;
+              }
             }
           }
         }
