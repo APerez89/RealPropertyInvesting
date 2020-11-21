@@ -183,11 +183,10 @@ export default {
     }
     .next {
       top: 50%;
-      // top: calc(50% - 50px);
       right: 0px;
     }
     .prev {
-      // top: calc(50% - 50px);
+      top: 50%;
       left: 0px;
     }
   }
