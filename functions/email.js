@@ -11,7 +11,7 @@ exports.handler = (event, context, callback) => {
     secure: true,
     auth: {
       type: 'OAuth2',
-      user: 'perezdevtesting@gmail.com',
+      user: 'realpropertyinvesting101@gmail.com',
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       refreshToken: process.env.REFRESH_TOKEN,
@@ -38,7 +38,7 @@ exports.handler = (event, context, callback) => {
 
   transport.sendMail({
     from: 'yourmom.com',
-    to: ['perezdevtesting@gmail.com'],
+    to: ['realpropertyinvesting101@gmail.com'],
     subject: 'Real Property Investing Contact',
     html,
   }, (error) => {
