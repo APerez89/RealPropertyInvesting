@@ -46,6 +46,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding: 15px;
 
   h3 {
     font-size: 1.3rem;
@@ -150,6 +151,10 @@ export default {
       }
     }
   }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

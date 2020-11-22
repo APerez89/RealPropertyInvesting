@@ -33,6 +33,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding: 15px;
 
   h3 {
     font-size: 1.3rem;
@@ -46,10 +47,10 @@ export default {
     .content-wrap {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-evenly;
 
       .img-wrap {
-        width: 50%;
+        width: 40%;
         img {
           width: 100%;
         }

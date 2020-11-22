@@ -45,6 +45,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding: 15px;
 
   h3 {
     font-size: 1.3rem;

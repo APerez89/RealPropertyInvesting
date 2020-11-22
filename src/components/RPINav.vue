@@ -87,6 +87,7 @@ export default {
   background-color: var(--white);
   box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
   z-index: 10;
+  padding: 0px 15px;
 
   .nav-wrap {
     max-width: 1250px;
@@ -120,7 +121,6 @@ export default {
         padding: 0px;
 
         > li {
-          height: 50px;
           padding: 10px 25px;
           font-size: 1.3rem;
           cursor: pointer;
@@ -273,6 +273,34 @@ export default {
     }
   }
 
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .nav-contain {
+    .nav-wrap {
+
+      .logo-wrap {
+        img {
+          width: 100%;
+          max-width: 145px;
+        }
+      }
+    
+      .nav-items {
+        ul {
+          li {
+            font-size: 1rem;
+            padding: 10px 18px;
+          }
+          .dropdown {
+            .drop-text {
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

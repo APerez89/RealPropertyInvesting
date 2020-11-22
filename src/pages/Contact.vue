@@ -23,6 +23,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding: 15px;
 
   h2 {
     font-size: 2.2rem;
