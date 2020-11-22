@@ -194,7 +194,7 @@ export default {
       this.resetData();
 
       fetch(
-        'https://dreamy-shirley-6cfb3f.netlify.app/.netlify/functions/email',
+        'https://realpropertyinvesting.com/.netlify/functions/email',
         {
           method: 'post',
           mode: 'no-cors',
