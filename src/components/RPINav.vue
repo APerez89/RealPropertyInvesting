@@ -174,7 +174,7 @@ export default {
             display: none;
           }
 
-          &:active {
+          &:hover {
             .drop-items {
               width: max-content;
               display: flex;
