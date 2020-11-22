@@ -331,7 +331,7 @@ export default {
               margin-top: 5px;
 
               li {
-                padding: 5px 10px;
+                padding: 10px;
               }
             }
           }
