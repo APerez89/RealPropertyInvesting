@@ -29,8 +29,20 @@
             </span>
 
             <div class="drop-items">
+              <router-link class="link" to="/Distressed">Distressed Property Expert</router-link>
+              <router-link class="link" to="/Short-Sale">Short Sale Negotiator</router-link>
+              <router-link class="link" to="/Investor">Real Estate Investor</router-link>
+              <router-link class="link" to="/Realtor">Premier Realtor</router-link>
+            </div>
+          </li>
+          <li class="dropdown-mobile">
+            <span class="drop-text">
+              Services
+            </span>
+
+            <div class="drop-items">
               <li @click="navOpen = !navOpen">
-                <router-link class="link" @click="navOpen = !navOpen" to="/Distressed">Distressed Property Expert</router-link>
+                <router-link class="link" to="/Distressed">Distressed Property Expert</router-link>
               </li>
               <li @click="navOpen = !navOpen">
                 <router-link class="link" to="/Short-Sale">Short Sale Negotiator</router-link>
@@ -39,7 +51,7 @@
                 <router-link class="link" to="/Investor">Real Estate Investor</router-link>
               </li>
               <li @click="navOpen = !navOpen">
-                <router-link class="link" to="/Realtor">Premier Realtor</router-link>
+                <router-link router-link class="link" to="/Realtor">Premier Realtor</router-link>
               </li>
             </div>
           </li>
@@ -140,6 +152,10 @@ export default {
           color: var(--l-blue);
         }
 
+        .dropdown-mobile {
+          display: none;
+        }
+
         .dropdown {
           position: relative;
           z-index: 10;
@@ -171,10 +187,6 @@ export default {
               font-weight: 500;
               letter-spacing: 0;
               left: 0;
-
-              li {
-                padding: 10px 10px;
-              }
 
               .link {
                 padding: 10px 0px;
@@ -298,6 +310,31 @@ export default {
         ul {
           align-items: start;
           flex-direction: column;
+
+          li {
+            height: auto;
+          }
+
+          .dropdown {
+            display: none;
+          }
+
+          .dropdown-mobile {
+            display: flex;
+            flex-direction: column;
+
+            .drop-items {
+              display: flex;
+              flex-direction: column;
+              font-weight: 500;
+              font-size: 1.1rem;
+              margin-top: 5px;
+
+              li {
+                padding: 5px 10px;
+              }
+            }
+          }
         }
 
         .social-wrap {
