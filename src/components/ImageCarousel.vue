@@ -180,6 +180,7 @@ export default {
     }
     button {
       width: 50px;
+      height: 50px;
     }
     .next {
       top: 50%;
