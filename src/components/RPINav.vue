@@ -16,8 +16,8 @@
       <div class="nav-items" :class="[navOpen ? 'mobile-nav-open' : 'mobile-nav-closed']">
 
         <ul>
-          <li><router-link class="link" to="/">Home</router-link></li>
-          <li><router-link class="link" to="/About">About</router-link></li>
+          <li @click="navOpen = !navOpen"><router-link class="link" to="/">Home</router-link></li>
+          <li @click="navOpen = !navOpen"><router-link class="link" to="/About">About</router-link></li>
           <li class="dropdown">
             <span class="drop-text">
               Services 
@@ -29,13 +29,21 @@
             </span>
 
             <div class="drop-items">
-              <router-link class="link" to="/Distressed">Distressed Property Expert</router-link>
-              <router-link class="link" to="/Short-Sale">Short Sale Negotiator</router-link>
-              <router-link class="link" to="/Investor">Real Estate Investor</router-link>
-              <router-link class="link" to="/Realtor">Premier Realtor</router-link>
+              <li @click="navOpen = !navOpen">
+                <router-link class="link" @click="navOpen = !navOpen" to="/Distressed">Distressed Property Expert</router-link>
+              </li>
+              <li @click="navOpen = !navOpen">
+                <router-link class="link" to="/Short-Sale">Short Sale Negotiator</router-link>
+              </li>
+              <li @click="navOpen = !navOpen">
+                <router-link class="link" to="/Investor">Real Estate Investor</router-link>
+              </li>
+              <li @click="navOpen = !navOpen">
+                <router-link class="link" to="/Realtor">Premier Realtor</router-link>
+              </li>
             </div>
           </li>
-          <li><router-link class="link" to="/Contact">Contact Us</router-link></li>
+          <li @click="navOpen = !navOpen"><router-link class="link" to="/Contact">Contact Us</router-link></li>
         </ul>
         <div class="social-wrap">
           <a class="icon-tag" href="https://www.facebook.com/REAL-Property-Investing-109022127574705/" target="_blank">
@@ -92,14 +100,14 @@ export default {
       font-weight: 600;
       letter-spacing: 2px;
 
-      ul {
+      > ul {
         display: flex;
         flex-direction: row;
         align-items: center;
         list-style: none;
         padding: 0px;
 
-        li {
+        > li {
           height: 50px;
           padding: 10px 25px;
           font-size: 1.3rem;
@@ -163,6 +171,10 @@ export default {
               font-weight: 500;
               letter-spacing: 0;
               left: 0;
+
+              li {
+                padding: 10px 10px;
+              }
 
               .link {
                 padding: 10px 0px;
