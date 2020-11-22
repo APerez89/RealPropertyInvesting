@@ -174,7 +174,7 @@ export default {
             display: none;
           }
 
-          &:hover {
+          &:active {
             .drop-items {
               width: max-content;
               display: flex;
@@ -275,7 +275,35 @@ export default {
 
 }
 
-@media (min-width: 320px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px) {
+  .nav-contain {
+    .nav-wrap {
+
+      .logo-wrap {
+        img {
+          width: 100%;
+          max-width: 145px;
+        }
+      }
+    
+      .nav-items {
+        ul {
+          li {
+            font-size: 1rem;
+            padding: 10px 18px;
+          }
+          .dropdown {
+            .drop-text {
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
   .nav-contain {
     .nav-wrap {
       position: relative;
