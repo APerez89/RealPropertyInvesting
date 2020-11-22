@@ -313,6 +313,10 @@ export default {
 
           li {
             height: auto;
+
+            &:active {
+              background: rgba(0,0,0,0);
+            }
           }
 
           .dropdown {
