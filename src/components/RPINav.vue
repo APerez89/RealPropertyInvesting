@@ -256,6 +256,7 @@ export default {
     .nav-wrap {
       position: relative;
       overflow: hidden;
+      margin: 0px 15px;
 
       .logo-wrap {
         img {

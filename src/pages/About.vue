@@ -3,7 +3,7 @@
     <div class="about-wrap">
       <div class="content-wrap">
         <div class="img-wrap">
-          <img src="/images/about.jpeg" alt="Founder of Real Property Investing">
+          <img src="/images/about.jpg" alt="Founder of Real Property Investing">
         </div>
         <div></div>
         <div class="content">
@@ -89,7 +89,7 @@ export default {
         align-items: center;
 
         .img-wrap {
-          width: 100%;
+          width: 90%;
         }
 
         .content {
