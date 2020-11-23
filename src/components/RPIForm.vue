@@ -190,6 +190,7 @@ export default {
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
 
+      this.$v.$reset();
 
       fetch(
         'https://realpropertyinvesting.com/.netlify/functions/email',
@@ -218,7 +219,6 @@ export default {
         }
       })
       
-      this.$v.$reset();
       this.resetData();
     },
     phoneNumber() {
