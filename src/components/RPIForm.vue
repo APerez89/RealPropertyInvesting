@@ -212,13 +212,13 @@ export default {
           }),
         }
       )
-      .then((response) => response.json())
-      .then(() => {
-        this.$router.push('/Thanks')
+      .then((res) => {
+        if (res.ok) {
+          this.$router.push('/Thanks')
+        } else {
+          this.$router.push('/404')
+        }
       })
-      .catch(() => {
-        this.$router.push('/404')
-      });
     },
     phoneNumber() {
       let pNumber = this.$v.phone.$model;
