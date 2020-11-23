@@ -30,7 +30,7 @@ exports.handler = (event, context, callback) => {
       <li style="list-style: none;">City: ${city} </li>
       <li style="list-style: none;">State: ${state} </li>
       <li style="list-style: none;">Call Time: ${callTime} </li>
-      <li style="list-style: none;">Mortgage: ${mortgage} </li>
+      <li style="list-style: none;">Mortgage: $ ${mortgage} </li>
       <li style="list-style: none;">Description: ${description} </li>
       <li style="list-style: none;">Repairs: ${repairs} </li>
     </ul>
