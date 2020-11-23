@@ -190,8 +190,6 @@ export default {
       this.$v.$touch();
       if(this.$v.$pending || this.$v.$error) return;
 
-      this.$v.$reset();
-      this.resetData();
 
       fetch(
         'https://realpropertyinvesting.com/.netlify/functions/email',
@@ -219,6 +217,9 @@ export default {
           this.$router.push('/404')
         }
       })
+      
+      this.$v.$reset();
+      this.resetData();
     },
     phoneNumber() {
       let pNumber = this.$v.phone.$model;

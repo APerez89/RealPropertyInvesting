@@ -23,23 +23,23 @@ exports.handler = (event, context, callback) => {
     <h2>You've been contacted</h2>
     <h3>Contact Details</h3>
     <ul style="padding: 0">
-      <li>Name: ${name} </li>
-      <li>Email: ${email} </li>
-      <li>Phone Number: ${phone} </li>
-      <li>Address: ${address} </li>
-      <li>City: ${city} </li>
-      <li>State: ${state} </li>
-      <li>Call Time: ${callTime} </li>
-      <li>Mortgage: ${mortgage} </li>
-      <li>Description: ${description} </li>
-      <li>Repairs: ${repairs} </li>
+      <li style="list-style: none;">Name: ${name} </li>
+      <li style="list-style: none;">Email: ${email} </li>
+      <li style="list-style: none;">Phone Number: ${phone} </li>
+      <li style="list-style: none;">Address: ${address} </li>
+      <li style="list-style: none;">City: ${city} </li>
+      <li style="list-style: none;">State: ${state} </li>
+      <li style="list-style: none;">Call Time: ${callTime} </li>
+      <li style="list-style: none;">Mortgage: ${mortgage} </li>
+      <li style="list-style: none;">Description: ${description} </li>
+      <li style="list-style: none;">Repairs: ${repairs} </li>
     </ul>
   `;
 
   transport.sendMail({
-    from: 'yourmom.com',
+    from: 'potentialclient',
     to: ['realpropertyinvesting101@gmail.com'],
-    subject: 'Real Property Investing Contact',
+    subject: `${this.$route.name} Real Property Investing Contact`,
     html,
   }, (error) => {
     if (error) {
