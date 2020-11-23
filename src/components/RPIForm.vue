@@ -217,9 +217,9 @@ export default {
         } else {
           this.$router.push('/404')
         }
+        this.resetData();
       })
       
-      this.resetData();
     },
     phoneNumber() {
       let pNumber = this.$v.phone.$model;
