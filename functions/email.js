@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 exports.handler = (event, context, callback) => {
   const {
-    name, email, phone, address, city, state, callTime, mortgage, description, repairs
+    name, email, phone, address, city, state, callTime, mortgage, description, repairs, pageName
   } = JSON.parse(event.body);
 
   const transport = nodemailer.createTransport({
@@ -39,7 +39,7 @@ exports.handler = (event, context, callback) => {
   transport.sendMail({
     from: 'potentialclient',
     to: ['realpropertyinvesting101@gmail.com'],
-    subject: `${this.$route.name} Real Property Investing Contact`,
+    subject: `${pageName} Real Property Investing Contact`,
     html,
   }, (error) => {
     if (error) {
