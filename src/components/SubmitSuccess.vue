@@ -1,6 +1,6 @@
 <template>
     <div class="submit-success-contain">
-        <h1>Thank you!</h1>
+        <h1>Thank you! We will contact you shortly.</h1>
         <router-link to="/">
             <button>Back home</button>
         </router-link>
