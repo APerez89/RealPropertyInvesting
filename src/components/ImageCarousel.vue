@@ -90,7 +90,7 @@ export default {
 <style lang="scss" scoped>
 .carousel-contain {
   width: 100%;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 150px);
   overflow: hidden;
 
   .carousel-wrap {
@@ -122,9 +122,9 @@ export default {
       }
     }
     .carousel-slide {
-      height: calc(100vh - 250px);
-      background-size: cover;
+      height: calc(100vh - 150px);
       background-position: 50%;
+      background-size: contain;
       background-repeat: no-repeat;
     }
   }
@@ -147,7 +147,7 @@ export default {
     }
   }
   .next {
-    top: calc(50% - 20px);
+    top: calc(50% + 50px);
     right: calc(0px + 15px);
 
     .next-svg {
@@ -156,7 +156,7 @@ export default {
     }
   }
   .prev {
-    top: calc(50% - 20px);
+    top: calc(50% + 50px);
     left: calc(0px + 15px);
 
     .prev-svg {

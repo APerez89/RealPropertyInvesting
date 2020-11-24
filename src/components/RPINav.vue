@@ -99,7 +99,7 @@ export default {
     .logo-wrap {
       img {
         width: 100%;
-        max-width: 195px;
+        max-width: 165px;
       }
     }
 
