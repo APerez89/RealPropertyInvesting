@@ -30,9 +30,6 @@
         v-bind:style="`backgroundImage: url(${image.img});`"
         >
       </div>
-
-    </div>
-    <div class="button-wrap">
     </div>
   </div>
 </template>
@@ -44,7 +41,7 @@ export default {
     return {
       images: [
         {
-          img: '/images/slide-3.png',
+          img: '/images/slide-3.jpg',
           txt: 'Fix & Flip Rehabber'
         },
         {
