@@ -9,12 +9,11 @@
         <div class="content">
           <h2>About Dominique</h2>
           <p>Founder, Real Property Investing</p> <br />
-          <p>Dominique was born and raised in Stamford, CT. For many years, she devoted herself to her career in Accounting. Today, Dominique is a Licensed Certified Property Expert and Debt Negotiator.</p> <br />
+          <p>Dominique was born and raised in Stamford, CT. <br />For many years, she devoted herself to her career in Accounting. Today, Dominique is a Licensed Certified Property Expert and Debt Negotiator.</p> <br />
           <p>In 2012, Dominique decided to cross over into the real estate sector. She worked part time for sophisticated investors, in exchange for mentorship. Years later, she worked with the Higgins Group, as well as leading members of SoCT Real Estate Investing Association, where she worked alongside some of the most sophisticated investors in the Country.</p> <br />
           <p>In 2020, Dominique became the Founder of Real Property Investing, the leading real estate investment firm in Fairfield County. Dominique has combined a unique force of dedicated specialists, who raise the standard for all clients. Through combined efforts, the Real Property Investing Team offers more skill, creativity and experience in buying, selling, rehabbing, negotiating, and investing in Real Estate.</p> <br />
           <p>According to Dominique, the success of Real Property Investing is measured everyday by the satisfaction of its clients, the number of buyers who are exposed to their properties, educating themselves daily, networking and marketing at the highest level, being creative and of course by the number of deals they close.</p> <br />
-          <p>Aside from Real Estate, Dominique is a devoted mother, mentor, educator and community activist.</p> <br />
-          <p>Dominique credits her upbeat spirit to her love for life and amazing family.</p>
+          <p>Aside from Real Estate, Dominique is a devoted mother, mentor, educator and community activist. Dominique credits her upbeat spirit to her love for life and amazing family.</p>
         </div>
       </div>
     </div>
