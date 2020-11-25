@@ -2,6 +2,12 @@
   <div class="carousel-contain">
     <div class="carousel-wrap">
       <div class="dark-bkg">
+        <button class="prev" @click="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="prev-svg">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
         <div class="text-box"
           v-for="(text, idx) in images"
           :key="idx"
@@ -9,6 +15,12 @@
         >
           <h1>{{ text.txt }}</h1>
         </div>
+
+        <button class="next" @click="next">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="next-svg">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        </button>
       </div>
       <div 
         class="carousel-slide"
@@ -20,16 +32,8 @@
       </div>
 
     </div>
-    <button class="prev" @click="prev">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="prev-svg">
-        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-      </svg>
-    </button>
-    <button class="next" @click="next">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="next-svg">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-      </svg>
-    </button>
+    <div class="button-wrap">
+    </div>
   </div>
 </template>
 
@@ -90,7 +94,7 @@ export default {
 <style lang="scss" scoped>
 .carousel-contain {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 75px);
   overflow: hidden;
 
   .carousel-wrap {
@@ -99,7 +103,7 @@ export default {
     .dark-bkg {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       position: absolute;
       background-color: rgba(0,0,0,0.3);
@@ -108,6 +112,35 @@ export default {
       bottom: 0;
       left: 0;
 
+      button {
+        width: 60px;
+        border: none;
+        background-color: rgba(0,0,0,0);
+        color: var(--white);
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+
+        &:focus, &:active {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: rgba(0,0,0,0.3);
+        }
+      }
+      .next {
+        .next-svg {
+          position: relative;
+          right: -2px;
+        }
+      }
+      .prev {
+        .prev-svg {
+          position: relative;
+          left: 2px;
+        }
+      }
       .text-box {
         color: var(--white);
         font-size: 1.6rem;
@@ -122,46 +155,10 @@ export default {
       }
     }
     .carousel-slide {
-      height: calc(100vh - 150px);
+      height: calc(100vh - 75px);
+      background-size: cover;
       background-position: 50%;
-      background-size: contain;
       background-repeat: no-repeat;
-    }
-  }
-  button {
-    width: 60px;
-    border: none;
-    background-color: rgba(0,0,0,0);
-    color: var(--white);
-    position: absolute;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: all 0.2s ease-in-out;
-
-    &:focus, &:active {
-      outline: none;
-    }
-
-    &:hover {
-      background-color: rgba(0,0,0,0.3);
-    }
-  }
-  .next {
-    top: calc(50% + 50px);
-    right: calc(0px + 15px);
-
-    .next-svg {
-      position: relative;
-      right: -2px;
-    }
-  }
-  .prev {
-    top: calc(50% + 50px);
-    left: calc(0px + 15px);
-
-    .prev-svg {
-      position: relative;
-      left: 2px;
     }
   }
 }
@@ -177,9 +174,22 @@ export default {
 
 @media (min-width: 320px) and (max-width: 767px) {
   .carousel-contain {
+    height: 35vh;
     .carousel-wrap {
       .dark-bkg {
-        padding: 50px;
+
+        button {
+          width: 50px;
+          height: 50px;
+        }
+        .next {
+          top: 50%;
+          right: 0px;
+        }
+        .prev {
+          top: 50%;
+          left: 0px;
+        }
 
         .text-box {
           font-size: 0.8rem;
@@ -187,18 +197,9 @@ export default {
           border-bottom: 2px solid var(--white);
         }
       }
-    }
-    button {
-      width: 50px;
-      height: 50px;
-    }
-    .next {
-      top: 50%;
-      right: 0px;
-    }
-    .prev {
-      top: 50%;
-      left: 0px;
+      .carousel-slide {
+        height: 35vh;
+      }
     }
   }
 }

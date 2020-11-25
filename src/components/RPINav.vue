@@ -166,6 +166,7 @@ export default {
 
             .down-arrow {
               width: 25px;
+              height: 0px;
               margin-left: 5px;
             }
           }
@@ -275,6 +276,7 @@ export default {
 
 }
 
+// Tablet
 // @media (min-width: 767px) and (max-width: 991px) {
 //   .nav-contain {
 //     .nav-wrap {
@@ -303,6 +305,7 @@ export default {
 //   }
 // }
 
+// Mobile
 @media (min-width: 320px) and (max-width: 767px) {
   .nav-contain {
     .nav-wrap {
