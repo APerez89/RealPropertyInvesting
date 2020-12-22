@@ -18,9 +18,9 @@
 
             <p class="phone-number">(203) 539-1051</p>
 
-            <div class="email">
+            <!-- <div class="email">
               <a href="mailto:realpropertyinvesting101@gmail.com?subject=Important!&body=Hi" target="_blank" rel="noopener noreferrer">realpropertyinvesting101@gmail.com</a>
-            </div>
+            </div> -->
 
           </div>
 
