@@ -44,7 +44,7 @@
 
       </div>
 
-      <p>Copyright &copy; 2020 Real Property Investing. All Rights Reserved.</p>
+      <p>Copyright &copy; 2022 Real Property Investing. All Rights Reserved.</p>
 
     </div>
   </div>
